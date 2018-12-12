@@ -6,6 +6,7 @@
 const {
   getProducts,
   getTotalPrice,
+  hasProduct,
 } = require('./product');
 
 const handleFetchProduct = function(req, res) {
@@ -16,7 +17,7 @@ const handleFetchProduct = function(req, res) {
 
 const handleFetchTotalPrice = function(req, res) {
   const totalPrice = {};
-  const productIds = req.query.ids.split(',').map(Number);
+  const productIds = req.query.ids.split(',').map(Number).filter(id => hasProduct(id));
   totalPrice.productIds = productIds;
   totalPrice.total = getTotalPrice(productIds);
   res.json(totalPrice);
