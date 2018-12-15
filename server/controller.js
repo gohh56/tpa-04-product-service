@@ -10,9 +10,8 @@ const {
 } = require('./product');
 
 const handleFetchProduct = function(req, res) {
-  const products = {};
-  products.products = getProducts();
-  res.json(products);
+  const products = getProducts();
+  res.json({ products });
 };
 
 const handleFetchTotalPrice = function(req, res) {

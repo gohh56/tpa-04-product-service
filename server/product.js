@@ -16,7 +16,7 @@ const getTotalPrice = function(productIds) {
 };
 
 const hasProduct = function(productId) {
-  return Object.hasOwnProperty.call(productsById, productId);
+  return productId in productsById;
 };
 
 module.exports = {

@@ -13,7 +13,7 @@ const setup = (app) => {
   // apiRouter にAPIルートとハンドラーを設定する
   //
   apiRouter.get('/products', handleFetchProduct);
-  apiRouter.get('/price?', handleFetchTotalPrice);
+  apiRouter.get('/price', handleFetchTotalPrice);
 
   app.use('/api', apiRouter);
 };
