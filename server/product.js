@@ -15,7 +15,12 @@ const getTotalPrice = function(productIds) {
     }, 0);
 };
 
+const hasProduct = function(productId) {
+  return productId in productsById;
+};
+
 module.exports = {
   getProducts,
   getTotalPrice,
+  hasProduct,
 };
